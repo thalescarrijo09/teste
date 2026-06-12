@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sandriel Prime - Agendamento</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body data-page="booking">
+  <div class="bg-overlay"></div>
+
+  <div class="container">
+    <header class="brand-header">
+      <div class="logo">Sandriel Prime</div>
+      <p class="tagline">Bem-vindo à Sandriel Prime</p>
+    </header>
+
+    <main class="booking-flow">
+      <section class="step">
+        <h2><span class="step-number">1</span> Escolha o Profissional</h2>
+        <div id="barbers-grid" class="grid barbers-grid">
+          <p class="helper-text">Carregando profissionais...</p>
+        </div>
+      </section>
+
+      <section class="step">
+        <h2><span class="step-number">2</span> Escolha o Serviço</h2>
+        <div id="services-grid" class="grid services-grid">
+          <p class="helper-text">Carregando serviços...</p>
+        </div>
+      </section>
+
+      <section class="step">
+        <h2><span class="step-number">3</span> Escolha o Horário</h2>
+        <div class="date-selector">
+          <button id="prev-date" class="arrow-btn" type="button" aria-label="Anterior">&#9664;</button>
+          <div id="dates-strip" class="dates-strip"></div>
+          <button id="next-date" class="arrow-btn" type="button" aria-label="Próximo">&#9654;</button>
+        </div>
+        <div id="slots-container" class="slots-container">
+          <p class="helper-text">Selecione um profissional e um serviço para ver os horários disponíveis.</p>
+        </div>
+      </section>
+
+      <section class="step">
+        <h2><span class="step-number">4</span> Seus Dados</h2>
+        <form id="booking-form" class="form">
+          <div class="form-group">
+            <label for="customer-name">Nome completo</label>
+            <input type="text" id="customer-name" placeholder="Seu nome completo" required>
+          </div>
+          <div class="form-group">
+            <label for="customer-phone">WhatsApp</label>
+            <input type="tel" id="customer-phone" placeholder="(00) 00000-0000" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Confirmar Agendamento</button>
+        </form>
+        <div id="booking-message" class="message"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© Sandriel Prime — Todos os direitos reservados.</p>
+    </footer>
+  </div>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "firebase/app": "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js",
+      "firebase/firestore": "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js",
+      "firebase/auth": "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"
+    }
+  }
+  </script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
